@@ -95,8 +95,15 @@ object NetWorkModule {
             .baseUrl(baseUrl)
             .addConverterFactory(Json {
                 isLenient = true; ignoreUnknownKeys = true;coerceInputValues =
-                true; allowStructuredMapKeys = true; prettyPrint = true; encodeDefaults = true;
-                allowStructuredMapKeys = true;
+                true; allowStructuredMapKeys = true; prettyPrint = true; encodeDefaults = true
+                /**
+                 * isLenient = true : 기본적으로 json key 값은 따옴표("") 로 감싸있어야 한다. value 또한 integer 가 아니라면 마찬가지. 이 옵션은 이런 따옴표 체크를 느슨히 한다.
+                 * ignoreUnknownKeys = true : response json 값에는 정의되어 있으나 model 에 해당 변수가 없을경우를 위해.
+                 * coerceInputValues = true : notNullable 하고 디폴트값이 있는 model 변수에 null 이 들어올 경우 죽는게 아니라 디폴트 값을 넣게함. + enum 타입에 알려지지 않은 값이 대입되는 경우
+                 * allowStructuredMapKeys = true : map 의 key, value 를 순서대로 나열하는 json array 형태로 표현할 수 있게된다.
+                 * prettyPrint = true : 말 그대로 로그가 읽기 쉽게 예쁘게 찍힘.
+                 * encodeDefaults = true : (서버/클라이언트) 또는 다른 버전간 json으로 통신할 때는 encoding 시 디폴트 밸류가 있는 변수에 값이 할당되지 않았을시 안찍히는 경우를 방지하기 위해.
+                 */
             }.asConverterFactory("application/json".toMediaType()))
             .build()
     }
