@@ -91,7 +91,7 @@ dependencies {
     implementation "com.jakewharton.rxbinding3:rxbinding:3.1.0"
 
     // coroutine
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3'
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
 
     // koin
