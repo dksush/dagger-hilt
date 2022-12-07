@@ -27,7 +27,7 @@ fun clicks(view: View, ms: Long): Observable<View> = Observable.create<View> { e
 ///4.0.0 commit 2
 
     }
-}.throttleFirst(ms, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
+}.throttleFirst(ms, TimeUnddit.MILLISECONDS, AndroidSchedulers.mainThread())
 
 
 fun View.clicks(
