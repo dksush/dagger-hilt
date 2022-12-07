@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit
 fun clicks(view: View, ms: Long): Observable<View> = Observable.create<View> { emitter ->
     view.setOnClickListener {
         emitter.onNext(it)
-///1.1.6
+///commit 1.1.7 1
     }
 }.throttleFirst(ms, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
 
