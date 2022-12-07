@@ -25,7 +25,7 @@ fun clicks(view: View, ms: Long): Observable<View> = Observable.create<View> { e
     view.setOnClickListener {
         emitter.onNext(it)
 ///4.0.0 commisdft 2
-//asdfsssdf
+//asdfsssdfdd
     }
 }.throttleFirst(ms, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
 
